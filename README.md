@@ -66,7 +66,51 @@
 *Coming soon: Setup guide, database instructions, and deployment steps.*
 
 ---
+-----Model class------
+class User:-
+    int id;
+    String name;
+    long mobileNo;
+    String password;
+class Theatre 
+    int id;
+    String name;
+    String location;
+    String address;
+    List<Screen> screens;
 
+  
+class Screen {
+    int screenNo;
+    int totalSeats;
+    boolean isAC;
+    List<ShowTime> showTimes; // all shows running in this screen
+}
+class ShowTime {
+    int showid;
+    Screen screen;
+    long startTime;
+    List<Ticket> tickets; // booked tickets for this show
+}
+
+class Movie {
+    int id;
+    int screenid;
+    int showId;
+    String title;
+    String language;
+    int durationMinutes;
+    String genre;
+    double rating;
+}
+class Ticket {
+    int ticketNo;
+    int screenId;
+    ShowTime showTime;
+    int seatCount;
+    List<String> seatNumbers; // to support specific seat selection
+    long bookingTime;
+}
 ## 📫 Contact
 For demos or collaboration, reach out to the developer behind **MovieTime Manager**.
 
